@@ -1,0 +1,198 @@
+/* public/styles/global.css */
+
+:root {
+  --primary: #f8049c;
+  --secondary: #fdd54f;
+  --body-bg: white;
+  --body-font: black;
+  --gray: #eee;
+}
+
+body {
+  font-family: "Noto Serif", serif;
+  margin: 0;
+}
+p,
+h1,
+h2,
+h3,
+a,
+ul {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #222;
+}
+
+header {
+  height: 60px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  padding: 0 16px;
+  position: fixed;
+  top: 0;
+  background-image: linear-gradient(to right, var(--primary), var(--secondary));
+}
+
+nav {
+  display: none;
+  font-family: "Open Sans";
+  position: absolute;
+  width: 100%;
+  top: 60px;
+  left: 0;
+  padding: 8px;
+  box-sizing: border-box;
+  border-bottom: 3px solid var(--secondary);
+  background: var(--body-bg);
+}
+
+nav.open {
+  display: block;
+}
+
+a {
+  padding: 4px 8px;
+  display: block;
+  text-align: center;
+  margin: auto 0;
+  color: var(--body-font);
+  font-weight: 400;
+}
+
+a.active {
+  font-weight: 700;
+}
+
+button.mobile-menu {
+  display: block;
+  right: 0;
+  position: absolute;
+  top: 50%;
+  width: 45px;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  border-width: 0px;
+}
+
+button.mobile-menu:before,
+button.mobile-menu:after {
+  background-color: var(--body-font);
+  content: "";
+  display: block;
+  height: 4px;
+  transition: all 200ms ease-in-out;
+}
+
+button.mobile-menu:before {
+  box-shadow: 0 10px 0 var(--body-font);
+  margin-bottom: 16px;
+}
+
+button.mobile-menu.open:before {
+  box-shadow: 0 0 0 var(--body-font);
+  transform: translateY(10px) rotate(45deg);
+}
+
+button.mobile-menu.open:after {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+main {
+  margin: 100px auto;
+  box-sizing: border-box;
+}
+
+.headline {
+  text-align: center;
+  margin: 30px;
+}
+form {
+  width: 80%;
+  margin: 0 auto;
+}
+
+form:not(.no-style) {
+  width: 100%;
+  max-width: 450px;
+  background: var(--body-bg);
+  border: 1px solid var(--gray);
+  padding: 30px;
+  box-sizing: border-box;
+  color: var(--body-font);
+  border-radius: 4px;
+}
+
+.alt-text {
+  text-align: center;
+  margin: 15px 0;
+}
+
+input {
+  margin-top: 20px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  font-family: "Open Sans";
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+}
+
+button.btn {
+  color: var(--body-bg);
+  font-weight: bold;
+  box-shadow: none;
+  border: none;
+  width: 100%;
+  display: block;
+  margin-top: 20px;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.link {
+  background-color: transparent;
+  border: 0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+button.primary {
+  background: var(--primary);
+}
+
+button.secondary {
+  background: var(--secondary);
+}
+
+button.large {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.5em;
+}
+
+@media (min-width: 768px) {
+  nav {
+    display: flex;
+    position: relative;
+    width: initial;
+    border-bottom: none;
+    margin: auto 0 auto auto;
+    background: none;
+    left: initial;
+    top: initial;
+  }
+
+  button.mobile-menu {
+    display: none;
+  }
+}

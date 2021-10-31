@@ -1,4 +1,25 @@
-<h1>hi!<%=name%></h1>
-<form action="/logout?_method=DELETE" method="POST">
-  <button type="submit">LogOut</button>
-</form>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../styles/global.css" />
+    <title>Welcome <%= name %></title>
+  </head>
+
+  <body>
+    <%- include('../includes/header', {name: name}); -%>
+    <main>
+      <h1 class="headline">
+        Welcome
+        <b><%= name %></b>
+      </h1>
+      <p class="headline">
+        You are just logged in using express.js+passport service.
+      </p>
+      <form action="/logout?_method=DELETE" method="POST">
+        <button type="submit">LogOut</button>
+      </form>
+    </main>
+  </body>
+</html>

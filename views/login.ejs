@@ -1,14 +1,35 @@
-<h1>login</h1>
-<%if(messages.error){%> <%=messages.error%> <%}%>
-<form action="/login" method="POST">
-  <div>
-    <label for="email">EMAIL</label>
-    <input type="text" id="email" name="email" required />
-  </div>
-  <div>
-    <label for="password">PASSWORD</label>
-    <input type="text" id="password" name="password" required />
-  </div>
-  <button type="submit">Login</button>
-  <a href="/register">Register</a>
-</form>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="../styles/global.css" />
+  </head>
+
+  <body>
+    <%- include('../includes/header', {name: null}); -%>
+    <main>
+      <% if(messages.error) { %> <%= messages.error %> <% } %>
+      <h1 class="headline">Login</h1>
+      <form action="/login" method="POST">
+        <span>Login if you have account</span>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          required
+        />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <button type="submit" class="btn primary large">Login</button>
+      </form>
+    </main>
+  </body>
+</html>

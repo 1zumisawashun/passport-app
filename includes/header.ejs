@@ -1,0 +1,19 @@
+<header>
+  <a href="/" class="logo">PASSPORT.JS</a>
+  <button type="button" class="mobile-menu" onclick="toggle(this);"></button>
+  <nav>
+    <% if(name) { %>
+    <a href="/">Home</a>
+    <a href="/logout">Logout</a>
+    <% } else { %>
+    <a href="/login">Login</a>
+    <a href="/register">Register</a>
+    <% } %>
+  </nav>
+</header>
+<script>
+  function toggle(element) {
+    element.classList.toggle("open");
+    document.getElementsByTagName("nav")[0].classList.toggle("open");
+  }
+</script>
