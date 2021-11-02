@@ -8,9 +8,10 @@ const passport = require("passport");
 const methodOverride = require("method-override");
 const flash = require("express-flash");
 const session = require("express-session");
-const initializePassport = require("./passport-config");
+const initializePassport = require("./middleware/authMiddleware.js");
 
 const users = [];
+console.log(users, "users");
 
 initializePassport(
   passport,
